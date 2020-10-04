@@ -1,0 +1,403 @@
+*{
+    margin:0;
+    padding:0;    
+}
+$Poppins:'Poppins', sans-serif;
+$Raleway:'Raleway', sans-serif;
+$bg_color:#21242b;
+$white_color:#fff;
+$orange:#ff662c;
+$blue:#1e75f8;
+$dark:#1b1f28;
+$lite:#2a2e37;
+$text_color:#7e8184;
+
+body{
+    width:100%;  
+}
+.dflex{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.container{
+    @extend .dflex;
+    width:100%;
+    height:100vh;
+    background-color:$bg_color;
+    padding:2vw 9vw 3.5vw 4.5vw; //1vw = 19.something px for 1920 X 1080px
+    box-sizing:border-box;
+    color:$text_color;
+    position:relative;
+    font-family: $Raleway;
+    overflow:hidden;
+    .row{
+        display:block;
+        width:100%;
+        height:100%;
+        position:relative;
+    }
+}
+/******* logo section *******/
+.logo{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+    width:5vw;
+    height:5vw;
+    border-radius: 5vw;
+    border:2px dotted rgba($white_color, .3);
+    transform:rotate(60deg);
+    position:absolute;
+    left:0;
+    top:0;
+    .blue_{
+        width:1.5vw;
+        height:1.5vw;
+        background-color:$blue;
+        border-radius: 1.5vw;
+        margin-bottom:5px;
+    }
+    .orange_{
+        width:3vw;
+        height:1vw;
+        background-color:$orange;
+        border-radius: 1vw;
+    }
+}//logo
+
+/*********header***********/
+header{
+    display:flex;
+    justify-content: flex-end;
+    align-items:center;
+    position:relative;
+    margin-left:200px;
+    nav{
+        ul{
+            list-style: none;
+            @extend .dflex;
+            li{
+                padding:10px 15px;
+                text-transform: uppercase;
+                color:$white_color;
+                font-size:10px;
+                letter-spacing: 1px;
+                cursor:pointer;
+                +li{
+                    margin-left:25px;
+                }
+            }
+        }//ul
+    }//nav
+}//header
+
+/**********Hero Section*************/
+.hero{
+    position:relative;
+    height:100%;
+    .hero_img{
+        position:absolute;
+        width:51vw;
+        left:55%;
+        bottom:-4vw;
+        z-index: 8;
+        transform:translateX(-50%);
+        @media(max-width:1368px){
+            width:42vw;
+            bottom:-2vw;
+        }
+        img{
+            width:100%;
+        }
+    }//hero_img
+
+    .cap_item{
+        height:100%;
+        transform:rotate(11deg);
+        position:relative;
+        bottom:-10vw;
+        left:-5vw;
+        @media(max-width:1368px){
+            transform:rotate(9deg);
+            bottom:-7vw;
+            left:.5vw;
+        }
+        .cap{
+            width:18vw;
+            height:65vw;
+            position:absolute;
+            bottom:0;
+            left:20%;
+            border-radius: 700px;
+            @media(max-width:1368px){
+                height:50vw;
+            }
+            &.orange_{
+                width:24vw;
+                background-color:$orange;
+                transform:rotate(45deg);
+                transform-origin:bottom center;
+                z-index: 4;
+            }
+            &.blue_{
+                background-color:$blue;
+                transform:rotate(29deg);
+                transform-origin:bottom center;
+                height:44vw;
+                left:26%;
+                z-index: 3;
+                @media(max-width:1368px){
+                    left:25%;
+                }
+            }
+            &.lite_{
+                background-color:$lite;
+                transform:rotate(50deg);
+                transform-origin:bottom center;
+                left:26%;
+                width:24vw;
+                z-index:2;
+            }
+            &.dark_{
+                background-color:$dark;
+                transform:rotate(64deg);
+                transform-origin:bottom center;
+                height:70vw;
+                width:24vw;
+                left:14vw;
+                z-index:1;
+                @media(max-width:1368px){
+                    transform:rotate(50deg);
+                    height:40vw;
+                    width:20vw;
+                    left:35vw;
+                }
+            }
+        }//cap
+    }//cap_item
+}//hero
+
+/*************main Content*************/
+.content{
+    position:absolute;
+    left:7.5vw;
+    top:50%;
+    transform:translateY(-50%);
+    @media(max-width:1368px){
+        left:9vw;
+    }
+    span{
+        display:inline-block;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        font-size: 12px;
+    }
+    h1{
+        font-size:6vw;
+        font-family: $Raleway;
+        text-transform: uppercase;
+        font-weight:900;
+        letter-spacing: 2px;
+        line-height: 1;
+        color:$white_color;
+        @media(max-width:1368px){
+            font-size:5vw;
+        }
+    }
+    h3{
+        font-family: $Raleway;
+        font-size:5vw;
+        font-weight:200;
+        text-transform: uppercase;
+        color:$white_color;
+        @media(max-width:1368px){
+            font-size:5vw;
+        }
+    }
+    p{
+        display:inline-block;
+        font-size:12px;
+        line-height: 1.5;
+        margin-top:20px;
+    }
+    .cta{
+        display:flex;
+        align-items: center;
+        color:$orange;
+        font-size:8px;
+        text-transform: uppercase;
+        margin-top:20px;
+        letter-spacing: 2px;
+        position:relative;
+        .fa{
+            margin-left:5px;
+            color:$orange;
+            position:relative;
+            top:1px;
+        }
+    }
+}//content
+
+/***************quote***************/
+.quote{
+    width:200px;
+    position:absolute;
+    top:20%;
+    right:3%;
+    text-align:right;
+    p{
+      font-size:12px;
+      color:$text_color;
+      line-height: 1.5;
+      text-align: left;  
+    }
+    span{
+        display:inline-block;
+        text-align: right;
+        color:$orange;
+        font-size: 10px;
+        margin-top:15px;
+        position:relative;
+        &:after{
+            content:"";
+            position:absolute;
+            left:-30px;
+            top:50%;
+            transform:translateY(-50%);
+            width:20px;
+            height:1px;
+            background-color:$orange;
+        }
+    }
+}//quote
+
+/******************indicator********************/
+.indicator{
+    @extend .dflex;
+    flex-direction: column;
+    position: absolute;
+    left:0;
+    top:50%;
+    transform: translateY(-50%);
+    span{
+        width:20px;
+        height:1px;
+        margin-right:auto;
+        background-color:rgba($white_color, .3);
+        transition:all .3s ease-in-out;
+        cursor:pointer;
+        +span{
+            margin-top:8px;
+        }
+        &.active,
+        &:hover{
+            background-color:$orange;
+            width:30px;
+        }
+    }
+}
+
+/****************video*******************/
+.video{
+    width:130px;
+    height:70px;
+    overflow: hidden;
+    position:absolute;
+    left:0;
+    bottom:-20px;
+    &:after{
+        width:100%;
+        height:100%;
+        left:0;
+        top:0;
+        right:0;
+        bottom:0;
+        content:"";
+        position:absolute;
+        background-color:rgba($orange,.3);
+    }
+    img{
+        width:100%;
+        height:100%;
+        object-fit: cover;
+    }
+    .video_icon{
+        position:absolute;
+        left:50%;
+        top:50%;
+        transform:translate(-50%, -50%);
+        font-size:25px;
+        color:$white_color;
+        z-index:2;
+    }
+}//video
+
+/******************side_navbar*******************/
+.side_navbar{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    width:5vw;
+    height:100%;
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    right:0;
+    border-left:1px solid rgba($lite,.7);
+    padding-bottom:3vw;
+    box-sizing: border-box;
+    .mobile_nav{
+        width:100%;
+        height:6vw;
+        background-color:$lite;
+        @extend .dflex;
+        .nav_{
+            @extend .dflex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap:2px;
+            width:20px;
+            cursor:pointer;
+            span{
+               width:5px;
+               height:5px;
+               background-color:$text_color; 
+            }
+        }
+    }//mobile_nav
+    .social{
+        @extend .dflex;
+        transform:rotate(90deg);
+        position:relative;
+        &:after{
+            content:"";
+            position:absolute;
+            left:-30px;
+            top:50%;
+            transform:translateY(-50%);
+            width:20px;
+            height:1px;
+            background-color:$orange;
+        }
+        span{
+            font-size:10px;
+            color:$white_color;
+            +span{
+                margin-left:35px;
+            }
+        }
+    }//social
+    .language{
+        font-size:12px;
+        font-weight:600;
+        color:$white_color;
+    }
+}//side_navbar
+
+
+//lets starts animation
